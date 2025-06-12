@@ -113,9 +113,9 @@ export default function FinalizacaoPedido({ navigation }) {
                 scrollEnabled={false} 
             />
 
-            <Text style={styles.sectionTitle}>Seus Dados</Text>
+            <Text style={styles.sectionTitle}>Para Pedido Vai Para...</Text>
             <View style={styles.inputContainer}>
-                <Text style={styles.label}>Nome Completo</Text>
+                <Text style={styles.label}>Nome</Text>
                 <TextInput
                     style={[styles.input, errors.nome ? styles.inputError : null]}
                     value={nomeCliente}

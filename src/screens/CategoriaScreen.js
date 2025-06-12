@@ -74,7 +74,7 @@ export default function CategoriaScreen({ route, navigation }) {
       </View>
       <View style={styles.bannerContainer}>
         <Image
-          source={require('../../assets/bud.jpeg')}
+          source={require('../../assets/placeHolder001.png')}
           style={styles.bannerImage}
           resizeMode="cover"
         />
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   },
   bannerContainer: {
     width: '100%',
-    height: 120,
+    height: 150,
     marginBottom: 15,
   },
   bannerImage: {

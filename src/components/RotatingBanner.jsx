@@ -2,11 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { View, Image, StyleSheet, Dimensions, ScrollView, Text } from 'react-native'; 
 
 const banners = [
-  { id: '1', imagem: require('../../assets/Banner0202.jpg') },
-  { id: '2', imagem: require('../../assets/SpatenBanner.jpg') },
-  { id: '3', imagem: require('../../assets/refrigerantesCategoria3.jpg') },
+  { id: '1', imagem: require('../../assets/bannersnacks001.png') },
+  { id: '2', imagem: require('../../assets/banner19.png') },
+  { id: '3', imagem: require('../../assets/bannervinhos001.png') },
  
-
 ];
 
 const { width } = Dimensions.get('window');

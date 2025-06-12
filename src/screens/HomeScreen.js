@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   Dimensions,
   SafeAreaView,
+  TextInput,
 } from 'react-native';
 import { MagnifyingGlass } from 'phosphor-react-native';
 import RotatingBanner from '../components/RotatingBanner';
@@ -37,21 +38,20 @@ const bebidas = [
   { id: '10', nome: 'Coca-Cola', descricao: '2 L', imagem: require('../../assets/cocagarrafa.jpg'), preco: 9.99, categoria: 'refrigerantes' },
   { id: '11', nome: 'Whisky Red Label', descricao: '1L', imagem: require('../../assets/whisky2.jpg'), preco: 90.00, categoria: 'destilados' },
   { id: '12', nome: 'Cachaça 51', descricao: '1L', imagem: require('../../assets/cana51.jpg'), preco: 14.99, categoria: 'destilados' },
-  { id: '13', nome: 'Doritos', descricao: '120g', imagem: require('../../assets/snacks1.jpg'), preco: 14.99, categoria: 'snacks' },
-  { id: '14', nome: 'Rufles', descricao: '120g', imagem: require('../../assets/snacks2.jpg'), preco: 14.99, categoria: 'snacks' },
-  { id: '15', nome: 'Torcida', descricao: '120g', imagem: require('../../assets/snacks3.jpg'), preco: 14.99, categoria: 'snacks' },
-  { id: '16', nome: 'Cheetos Parmesão', descricao: '1L', imagem: require('../../assets/snacks4.jpg'), preco: 14.99, categoria: 'snacks' },
-  { id: '17', nome: 'Cheetos requeijão', descricao: '120g', imagem: require('../../assets/snacks5.jpg'), preco: 15.00, categoria: 'snacks' },
-  { id: '18', nome: 'KitKat', descricao: '120g', imagem: require('../../assets/snacks6.jpeg'), preco: 15.00, categoria: 'snacks' },
-  { id: '19', nome: 'Bis', descricao: '120g', imagem: require('../../assets/snacks7.jpg'), preco: 15.00, categoria: 'snacks' },
-  { id: '20', nome: 'Chocolate Lacta', descricao: '120g', imagem: require('../../assets/snacks8.jpg'), preco: 15.00, categoria: 'snacks' },
-  { id: '21', nome: 'Biscoito PassaTempo', descricao: '120g', imagem: require('../../assets/snacks9.jpg'), preco: 15.00, categoria: 'snacks' },
-  { id: '22', nome: 'Biscoito Oreo', descricao: '120g', imagem: require('../../assets/snacks10.jpg'), preco: 15.00, categoria: 'snacks' },
-  { id: '23', nome: 'Vinho Miolo', descricao: '120g', imagem: require('../../assets/vinho001.jpg'), preco: 15.00, categoria: 'vinhos' },
-  { id: '24', nome: 'Vinho Miolo', descricao: '120g', imagem: require('../../assets/vinho002.jpg'), preco: 15.00, categoria: 'vinhos' },
-  { id: '25', nome: 'Vinho Nuances', descricao: '120g', imagem: require('../../assets/vinho003.jpg'), preco: 15.00, categoria: 'vinhos' },
-  { id: '26', nome: 'Vinho Miolo', descricao: '120g', imagem: require('../../assets/vinhosCategoria10.jpg'), preco: 15.00, categoria: 'vinhos' },
-
+  { id: '13', nome: 'Doritos', descricao: '120g', imagem: require('../../assets/snacks1.jpg'), preco: 12.99, categoria: 'snacks' },
+  { id: '14', nome: 'Rufles', descricao: '68g', imagem: require('../../assets/snacks2.jpg'), preco: 9.99, categoria: 'snacks' },
+  { id: '15', nome: 'Torcida', descricao: '35g', imagem: require('../../assets/snacks3.jpg'), preco: 1.99, categoria: 'snacks' },
+  { id: '16', nome: 'Cheetos Parmesão', descricao: '160', imagem: require('../../assets/snacks4.jpg'), preco: 9.99, categoria: 'snacks' },
+  { id: '17', nome: 'Cheetos requeijão', descricao: '160g', imagem: require('../../assets/snacks5.jpg'), preco: 9.99, categoria: 'snacks' },
+  { id: '18', nome: 'KitKat', descricao: '45g', imagem: require('../../assets/snacks6.jpeg'), preco: 2.99, categoria: 'snacks' },
+  { id: '19', nome: 'Bis', descricao: '126g', imagem: require('../../assets/snacks7.jpg'), preco: 7.99, categoria: 'snacks' },
+  { id: '20', nome: 'Chocolate Lacta', descricao: '98g', imagem: require('../../assets/snacks8.jpg'), preco: 6.99, categoria: 'snacks' },
+  { id: '21', nome: 'Biscoito PassaTempo', descricao: '90g', imagem: require('../../assets/snacks9.jpg'), preco: 2.99, categoria: 'snacks' },
+  { id: '22', nome: 'Biscoito Oreo', descricao: '90g', imagem: require('../../assets/snacks10.jpg'), preco: 2.99, categoria: 'snacks' },
+  { id: '23', nome: 'Vinho Tinto Seco Miolo', descricao: '750ML', imagem: require('../../assets/vinho001.jpg'), preco: 29.99, categoria: 'vinhos' },
+  { id: '24', nome: 'Vinho Branco Seco Miolo', descricao: '750ML', imagem: require('../../assets/vinho002.jpg'), preco: 29.99, categoria: 'vinhos' },
+  { id: '25', nome: 'Vinho Tinto Suave Nuances', descricao: '750ML', imagem: require('../../assets/vinho003.jpg'), preco: 29.99, categoria: 'vinhos' },
+  { id: '26', nome: 'Vinho Tinto Suave Miolo', descricao: '750ML', imagem: require('../../assets/vinho003.jpg'), preco: 29.99, categoria: 'vinhos' },
 ];
 
 const CategoriasList = ({ navigation }) => (
@@ -63,21 +63,6 @@ const CategoriasList = ({ navigation }) => (
       showsHorizontalScrollIndicator={false}
       style={styles.categoriasList}
       renderItem={({ item }) => {
-      
-        if (item.id === 'todos') {
-          return (
-            <TouchableOpacity
-              style={styles.categoriaCard}
-              onPress={() => {
-                navigation.navigate('Home');
-              }}
-            >
-              <Image source={item.icone} style={styles.categoriaImagem} resizeMode="cover" />
-              <Text style={styles.categoriaNome}>{item.nome}</Text>
-            </TouchableOpacity>
-          );
-        }
-
         const produtosFiltrados = bebidas.filter(bebida => bebida.categoria === item.id);
         if (produtosFiltrados.length === 0) {
           console.warn(`Nenhum produto encontrado para a categoria ${item.id}`);
@@ -104,17 +89,37 @@ const CategoriasList = ({ navigation }) => (
   </View>
 );
 
-const Header = () => (
+const Header = ({ searchQuery, setSearchQuery, searchInputRef }) => (
   <View style={styles.header}>
     <Image source={require('../../assets/marcoaLogo2.png')} style={styles.logo} />
-    <TouchableOpacity onPress={() => console.log('Abrir busca')}>
-      <MagnifyingGlass size={30} color="white" weight="bold" />
-    </TouchableOpacity>
+    <View style={styles.searchContainer}>
+      <TextInput
+        ref={searchInputRef}
+        style={styles.searchInput}
+        value={searchQuery}
+        onChangeText={setSearchQuery}
+        placeholder="Buscar produto..."
+        placeholderTextColor="#888"
+        autoCapitalize="none"
+        returnKeyType="search"
+        onSubmitEditing={() => console.log('Busca submetida:', searchQuery)}
+      />
+      <TouchableOpacity onPress={() => searchInputRef.current?.focus()}>
+        <MagnifyingGlass size={30} color="white" weight="bold" />
+      </TouchableOpacity>
+    </View>
   </View>
 );
 
-
 export default function HomeScreen({ navigation }) {
+  const [searchQuery, setSearchQuery] = useState('');
+  const searchInputRef = useRef(null);
+
+  const filteredBebidas = bebidas.filter(bebida =>
+    bebida.nome.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    bebida.descricao.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const renderBebidaItem = ({ item }) => (
     <TouchableOpacity
       onPress={() => navigation.navigate('Detalhes', { bebida: item })}
@@ -141,19 +146,19 @@ export default function HomeScreen({ navigation }) {
     { type: 'categorias', key: 'categorias' },
     { type: 'banner', key: 'banner' },
     { type: 'bebidas_title', key: 'bebidas_title' },
-    { type: 'bebidas', key: 'bebidas', data: bebidas },
+    { type: 'bebidas', key: 'bebidas', data: filteredBebidas },
   ];
 
   const renderSection = ({ item }) => {
     switch (item.type) {
       case 'header':
-        return <Header />;
+        return <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} searchInputRef={searchInputRef} />;
       case 'categorias':
         return <CategoriasList navigation={navigation} />;
       case 'banner':
         return <RotatingBanner />;
       case 'bebidas_title':
-        return <Text style={styles.bebidasTitle}>Variedade</Text>;
+        return <Text style={styles.bebidasTitle}>Variedades</Text>;
       case 'bebidas':
         return (
           <FlatList
@@ -163,6 +168,9 @@ export default function HomeScreen({ navigation }) {
             numColumns={2}
             style={styles.bebidasGrid}
             columnWrapperStyle={styles.bebidasRow}
+            ListEmptyComponent={
+              searchQuery ? <Text style={styles.emptyListText}>Nenhum produto encontrado para "{searchQuery}".</Text> : null
+            }
           />
         );
       default:
@@ -201,13 +209,24 @@ const styles = StyleSheet.create({
     height: 45,
     resizeMode: 'cover',
   },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  searchInput: {
+    backgroundColor: '#333',
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    color: 'white',
+    width: 150,
+    marginRight: 10,
+  },
   categoriasContainer: {
     paddingLeft: 15,
     paddingVertical: 15,
   },
-  categoriasList: {
-  
-  },
+  categoriasList: {},
   categoriaCard: {
     alignItems: 'center',
     marginRight: 15,
@@ -233,7 +252,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  
+  bebidasTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: 'white',
+    marginTop: 10,
+    marginBottom: 15,
+    marginLeft: 15,
+  },
   bebidasGrid: {
     paddingHorizontal: 10,
   },
@@ -281,5 +307,12 @@ const styles = StyleSheet.create({
     color: '#888',
     fontSize: 12,
     fontWeight: 'bold',
+  },
+  emptyListText: {
+    color: '#999',
+    textAlign: 'center',
+    marginTop: 50,
+    fontSize: 16,
+    paddingHorizontal: 20,
   },
 });
