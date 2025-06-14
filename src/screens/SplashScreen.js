@@ -31,7 +31,7 @@ export default function SplashScreen({ navigation }) {
           { opacity: fadeAnim, transform: [{ scale: scaleAnim }] },
         ]}
       >
-        <Image source={require('../../assets/marcoaLogo2.png')} style={styles.logo} />
+        <Image source={require('../../assets/marcaoLogo1.png')} style={styles.logo} />
       </Animated.View>
     </View>
   );
@@ -40,7 +40,7 @@ export default function SplashScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#FFFFFF',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: 250,
-    height: 250,
+    width: 350,
+    height: 350,
     resizeMode: 'contain',
   },
 });

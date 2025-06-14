@@ -17,25 +17,25 @@ import RotatingBanner from '../components/RotatingBanner';
 const { width } = Dimensions.get('window');
 
 const categorias = [
-  { id: 'vinhos', nome: 'Vinhos', icone: require('../../assets/vinhosCategoria10.jpg') },
-  { id: 'cervejas', nome: 'Cervejas', icone: require('../../assets/cervejasCategoria1.jpg') },
-  { id: 'destilados', nome: 'Destilados', icone: require('../../assets/whiskysCategoria1.jpg') },
-  { id: 'refrigerantes', nome: 'Refrigerantes', icone: require('../../assets/refrigerantesCategoria3.jpg') },
-  { id: 'nao_alcoolicos', nome: 'Não Alcoólicos', icone: require('../../assets/naoAlcoolicos1.jpg') },
-  { id: 'snacks', nome: 'Snacks', icone: require('../../assets/SnacksCategoria.jpg') },
+  { id: 'vinhos', nome: 'Vinhos', icone: require('../../assets/categoriaVinho002.png') },
+  { id: 'cervejas', nome: 'Cervejas', icone: require('../../assets/categoriaImg001.png') },
+  { id: 'destilados', nome: 'Destilados', icone: require('../../assets/whiskycaregoria003.png') },
+  { id: 'refrigerantes', nome: 'Refrigerantes', icone: require('../../assets/categoriaRefrigerante004.png') },
+  { id: 'nao_alcoolicos', nome: 'Não Alcoólicos', icone: require('../../assets/categoriaNalcolico005.png') },
+  { id: 'snacks', nome: 'Snacks', icone: require('../../assets/categoriaSnacks006.png') },
 ];
 
 const bebidas = [
-  { id: '1', nome: 'Coca-Cola Lata', descricao: '350 ML', imagem: require('../../assets/cocalata2.jpg'), preco: 3.49, categoria: 'refrigerantes' },
-  { id: '2', nome: 'Heineken', descricao: '330 ML', imagem: require('../../assets/heineken2.jpg'), preco: 6.99, categoria: 'cervejas' },
-  { id: '3', nome: 'Skol', descricao: '350 ML', imagem: require('../../assets/skollata.jpg'), preco: 2.99, categoria: 'cervejas' },
-  { id: '4', nome: 'Skol garrafa', descricao: '350 ML', imagem: require('../../assets/skolgarrafa.jpg'), preco: 3.99, categoria: 'cervejas' },
-  { id: '5', nome: 'Red Bull', descricao: '250 ML', imagem: require('../../assets/redbull2.jpg'), preco: 7.99, categoria: 'nao_alcoolicos' },
-  { id: '6', nome: 'Monster', descricao: '200 ML', imagem: require('../../assets/Monster2.jpg'), preco: 7.49, categoria: 'nao_alcoolicos' },
-  { id: '7', nome: 'Budweiser', descricao: '350 ML', imagem: require('../../assets/budweiser2.jpg'), preco: 6.99, categoria: 'cervejas' },
-  { id: '8', nome: 'Imperio', descricao: '300 ML', imagem: require('../../assets/imperio2.jpg'), preco: 3.49, categoria: 'cervejas' },
-  { id: '9', nome: 'Glacial', descricao: '250 ML', imagem: require('../../assets/glacial2.jpg'), preco: 2.49, categoria: 'cervejas' },
-  { id: '10', nome: 'Coca-Cola', descricao: '2 L', imagem: require('../../assets/cocagarrafa.jpg'), preco: 9.99, categoria: 'refrigerantes' },
+  { id: '1', nome: 'Refrigerante Coca Cola Lata', descricao: '350ML', imagem: require('../../assets/cocalata2.jpg'), preco: 3.49, categoria: 'refrigerantes' },
+  { id: '2', nome: 'Cerveja Heineken', descricao: '330ML', imagem: require('../../assets/heineken2.jpg'), preco: 6.99, categoria: 'cervejas' },
+  { id: '3', nome: 'Cerveja Skol Lata', descricao: '350ML', imagem: require('../../assets/skollata.jpg'), preco: 2.99, categoria: 'cervejas' },
+  { id: '4', nome: 'Cerveja Skol garrafa', descricao: '350ML', imagem: require('../../assets/skolgarrafa.jpg'), preco: 3.99, categoria: 'cervejas' },
+  { id: '5', nome: 'Energético Red Bull', descricao: '250ML', imagem: require('../../assets/redbull2.jpg'), preco: 7.99, categoria: 'nao_alcoolicos' },
+  { id: '6', nome: 'Energético Monster', descricao: '250ML', imagem: require('../../assets/Monster2.jpg'), preco: 7.49, categoria: 'nao_alcoolicos' },
+  { id: '7', nome: 'Cerveja Budweiser Garrafa', descricao: '350ML', imagem: require('../../assets/budweiser2.jpg'), preco: 6.99, categoria: 'cervejas' },
+  { id: '8', nome: 'Cerveja Imperio Lata', descricao: '300ML', imagem: require('../../assets/imperio2.jpg'), preco: 3.49, categoria: 'cervejas' },
+  { id: '9', nome: 'Cerveja Glacial Lata', descricao: '250ML', imagem: require('../../assets/glacial2.jpg'), preco: 2.49, categoria: 'cervejas' },
+  { id: '10', nome: 'Refrigernate Coca-Cola Garrafa', descricao: '2L', imagem: require('../../assets/cocagarrafa.jpg'), preco: 9.99, categoria: 'refrigerantes' },
   { id: '11', nome: 'Whisky Red Label', descricao: '1L', imagem: require('../../assets/whisky2.jpg'), preco: 90.00, categoria: 'destilados' },
   { id: '12', nome: 'Cachaça 51', descricao: '1L', imagem: require('../../assets/cana51.jpg'), preco: 14.99, categoria: 'destilados' },
   { id: '13', nome: 'Doritos', descricao: '120g', imagem: require('../../assets/snacks1.jpg'), preco: 12.99, categoria: 'snacks' },
@@ -43,8 +43,8 @@ const bebidas = [
   { id: '15', nome: 'Torcida', descricao: '35g', imagem: require('../../assets/snacks3.jpg'), preco: 1.99, categoria: 'snacks' },
   { id: '16', nome: 'Cheetos Parmesão', descricao: '160', imagem: require('../../assets/snacks4.jpg'), preco: 9.99, categoria: 'snacks' },
   { id: '17', nome: 'Cheetos requeijão', descricao: '160g', imagem: require('../../assets/snacks5.jpg'), preco: 9.99, categoria: 'snacks' },
-  { id: '18', nome: 'KitKat', descricao: '45g', imagem: require('../../assets/snacks6.jpeg'), preco: 2.99, categoria: 'snacks' },
-  { id: '19', nome: 'Bis', descricao: '126g', imagem: require('../../assets/snacks7.jpg'), preco: 7.99, categoria: 'snacks' },
+  { id: '18', nome: 'Chocolate KitKat', descricao: '45g', imagem: require('../../assets/snacks6.jpeg'), preco: 2.99, categoria: 'snacks' },
+  { id: '19', nome: 'Chocolate Bis', descricao: '126g', imagem: require('../../assets/snacks7.jpg'), preco: 7.99, categoria: 'snacks' },
   { id: '20', nome: 'Chocolate Lacta', descricao: '98g', imagem: require('../../assets/snacks8.jpg'), preco: 6.99, categoria: 'snacks' },
   { id: '21', nome: 'Biscoito PassaTempo', descricao: '90g', imagem: require('../../assets/snacks9.jpg'), preco: 2.99, categoria: 'snacks' },
   { id: '22', nome: 'Biscoito Oreo', descricao: '90g', imagem: require('../../assets/snacks10.jpg'), preco: 2.99, categoria: 'snacks' },
@@ -52,6 +52,15 @@ const bebidas = [
   { id: '24', nome: 'Vinho Branco Seco Miolo', descricao: '750ML', imagem: require('../../assets/vinho002.jpg'), preco: 29.99, categoria: 'vinhos' },
   { id: '25', nome: 'Vinho Tinto Suave Nuances', descricao: '750ML', imagem: require('../../assets/vinho003.jpg'), preco: 29.99, categoria: 'vinhos' },
   { id: '26', nome: 'Vinho Tinto Suave Miolo', descricao: '750ML', imagem: require('../../assets/vinho003.jpg'), preco: 29.99, categoria: 'vinhos' },
+  { id: '27', nome: 'Refrigernate Fanta Uva', descricao: '350ML', imagem: require('../../assets/FantaUva.png'), preco: 3.99, categoria: 'refrigerantes' },
+  { id: '28', nome: 'Refrigernate Fanta Laranja', descricao: '350ML', imagem: require('../../assets/FantaLaranja.png'), preco: 3.99, categoria: 'refrigerantes' },
+  { id: '29', nome: 'Refrigerante Guaraná', descricao: '350ML', imagem: require('../../assets/guaranalata.png'), preco: 3.99, categoria: 'refrigerantes' },
+  { id: '30', nome: 'Refrigerante Sprite', descricao: '350ML', imagem: require('../../assets/sprite.png'), preco: 2.99, categoria: 'refrigerantes' },
+  { id: '31', nome: 'Refrigerante Pepsi', descricao: '350ML', imagem: require('../../assets/pepsi.png'), preco: 3.99, categoria: 'refrigerantes' },
+  { id: '32', nome: 'Refrigerante Guaraná Garrafa', descricao: '2L', imagem: require('../../assets/guaranagarrafa.png'), preco: 8.99, categoria: 'refrigerantes' },
+  { id: '33', nome: 'Refrigerante Fanta Uva Garrafa', descricao: '2L', imagem: require('../../assets/FantaUvagarraf.png'), preco: 9.99, categoria: 'refrigerantes' },
+  { id: '34', nome: 'Refrigerante Fanta Laranja Garrafa', descricao: '2L', imagem: require('../../assets/FantaLaranjagarraf.png'), preco: 9.99, categoria: 'refrigerantes' },
+
 ];
 
 const CategoriasList = ({ navigation }) => (
@@ -91,7 +100,7 @@ const CategoriasList = ({ navigation }) => (
 
 const Header = ({ searchQuery, setSearchQuery, searchInputRef }) => (
   <View style={styles.header}>
-    <Image source={require('../../assets/marcoaLogo2.png')} style={styles.logo} />
+    <Image source={require('../../assets/marcaoLogo1.png')} style={styles.logo} />
     <View style={styles.searchContainer}>
       <TextInput
         ref={searchInputRef}
@@ -105,7 +114,7 @@ const Header = ({ searchQuery, setSearchQuery, searchInputRef }) => (
         onSubmitEditing={() => console.log('Busca submetida:', searchQuery)}
       />
       <TouchableOpacity onPress={() => searchInputRef.current?.focus()}>
-        <MagnifyingGlass size={30} color="white" weight="bold" />
+        <MagnifyingGlass size={30} color="#000000" weight="bold" />
       </TouchableOpacity>
     </View>
   </View>
@@ -194,15 +203,15 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: 'white',
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 15,
+    paddingHorizontal: 10,
     paddingTop: 10,
-    paddingBottom: 10,
+    paddingBottom: 0,
   },
   logo: {
     width: 150,
@@ -214,40 +223,40 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   searchInput: {
-    backgroundColor: '#333',
+    backgroundColor: '#DBDBDB',
     borderRadius: 10,
     paddingHorizontal: 10,
     paddingVertical: 5,
-    color: 'white',
+    color: '#000000',
     width: 150,
     marginRight: 10,
   },
   categoriasContainer: {
     paddingLeft: 15,
-    paddingVertical: 15,
+    paddingVertical: 10,
   },
   categoriasList: {},
   categoriaCard: {
     alignItems: 'center',
-    marginRight: 15,
+    marginRight: 10,
     width: 80,
     paddingVertical: 8,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#333',
+    borderColor: 'transparent',
   },
   categoriaImagem: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    marginBottom: 8,
+    width: 80,
+    height: 70,
+    borderRadius: 15,
+    marginBottom: 0,
     backgroundColor: '#333',
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'hidden',
   },
   categoriaNome: {
-    color: 'white',
+    color: '#000000',
     fontSize: 12,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -255,8 +264,8 @@ const styles = StyleSheet.create({
   bebidasTitle: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: 'white',
-    marginTop: 10,
+    color: '#000000',
+    marginTop: 0,
     marginBottom: 15,
     marginLeft: 15,
   },
@@ -268,17 +277,17 @@ const styles = StyleSheet.create({
   },
   bebidaItem: {
     width: (width - 40) / 2,
-    marginBottom: 15,
+    marginBottom: 10,
   },
   bebidaCard: {
-    backgroundColor: '#1C1C1C',
-    borderRadius: 12,
-    padding: 10,
+    backgroundColor: '#FAFAFA',
+    borderRadius: 15,
+    padding: 5,
     alignItems: 'center',
     width: '100%',
   },
   bebidaImagem: {
-    width: '90%',
+    width: '100%',
     height: 120,
     borderRadius: 10,
     marginBottom: 10,
@@ -289,12 +298,12 @@ const styles = StyleSheet.create({
   bebidaNome: {
     fontSize: 15,
     fontWeight: 'bold',
-    color: 'white',
+    color: '#000000',
     textAlign: 'center',
-    marginBottom: 4,
+    marginBottom: 0,
   },
   bebidaDescricao: {
-    fontSize: 12,
+    fontSize: 15,
     color: '#cccccc',
     textAlign: 'center',
   },
@@ -313,6 +322,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 50,
     fontSize: 16,
-    paddingHorizontal: 20,
+    paddingHorizontal: 80,
   },
 });

@@ -67,7 +67,7 @@ export default function Detalhes({ route, navigation }) {
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
-                <ArrowLeft size={30} color="white" weight="bold" />
+                <ArrowLeft size={30} color="#000000" weight="bold" />
                 </TouchableOpacity>
             </View>
 
@@ -135,7 +135,7 @@ export default function Detalhes({ route, navigation }) {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#FFFFFF',
   },
    safeAreaError: {
     flex: 1,
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     alignItems: 'center',
-    marginVertical: 10,
+    marginVertical: 0,
   },
   productImage: {
     width: width * 0.6, 
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
   productName: {
     fontSize: 22, 
     fontWeight: 'bold',
-    color: 'white',
+    color: '#000000',
     textAlign: 'center',
     marginBottom: 10,
   },
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
     gap: 20, 
   },
   quantityButton: {
-    backgroundColor: '#333', 
+    backgroundColor: '#FFA500', 
     width: 44, 
     height: 44,
     borderRadius: 22, 
@@ -212,13 +212,13 @@ const styles = StyleSheet.create({
   quantityButtonText: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: 'white',
+    color: '#000000',
     lineHeight: 26, 
   },
   quantityDisplay: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: 'white',
+    color: '#000000',
     minWidth: 40, 
     textAlign: 'center',
   },
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   addButtonText: {
-    color: 'black',
+    color: '#000000',
     fontSize: 18,
     fontWeight: 'bold',
   },
@@ -259,9 +259,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   suggestionsTitle: {
-    fontSize: 18, 
+    fontSize: 20, 
     fontWeight: 'bold',
-    color: 'white',
+    color: '#000000',
     marginBottom: 15,
     marginLeft: 15,
   },
@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 140, 
     marginRight: 15,
-    backgroundColor: '#1C1C1C',
+    backgroundColor: '#FAFAFA',
     borderRadius: 10,
     padding: 10,
   },
@@ -281,7 +281,7 @@ const styles = StyleSheet.create({
   },
   suggestionName: {
     fontSize: 13,
-    color: 'white',
+    color: '#000000',
     textAlign: 'center',
     height: 35, 
     marginBottom: 4,

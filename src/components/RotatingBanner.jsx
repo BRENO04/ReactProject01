@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15, 
   },
   bannerImage: {
-    width: '100%', 
+    width: '105%', 
     height: 150,
     borderRadius: 16,
   },
