@@ -67,14 +67,14 @@ export default function CategoriaScreen({ route, navigation }) {
       <StatusBar barStyle="light-content" />
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <ArrowLeft size={28} color="white" weight="bold" />
+          <ArrowLeft size={28} color="#000000" weight="bold" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>{titulo || 'Categoria'}</Text>
         <View style={{ width: 28 }} />
       </View>
       <View style={styles.bannerContainer}>
         <Image
-          source={require('../../assets/placeHolder001.png')}
+          source={require('../../assets/Categoriabanner009.png')}
           style={styles.bannerImage}
           resizeMode="cover"
         />
@@ -98,7 +98,7 @@ export default function CategoriaScreen({ route, navigation }) {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#FFFFFF',
   },
   header: {
     flexDirection: 'row',
@@ -106,18 +106,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 15,
     paddingVertical: 15,
-    backgroundColor: '#111',
+    backgroundColor: '#FAFAFA',
   },
   headerTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: 'white',
+    color: '#000000',
     textAlign: 'center',
   },
   bannerContainer: {
     width: '100%',
-    height: 150,
-    marginBottom: 15,
+    height: 170,
+    marginBottom: 30,
   },
   bannerImage: {
     width: '100%',
@@ -138,14 +138,14 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   bebidaCard: {
-    backgroundColor: '#1C1C1C',
-    borderRadius: 12,
+    backgroundColor: '#FAFAFA',
+    borderRadius: 15,
     padding: 10,
     alignItems: 'center',
     width: '100%',
   },
   bebidaImagem: {
-    width: '90%',
+    width: '100%',
     height: 120,
     borderRadius: 10,
     marginBottom: 10,
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   bebidaNome: {
     fontSize: 15,
     fontWeight: 'bold',
-    color: 'white',
+    color: '#000000',
     textAlign: 'center',
     marginBottom: 4,
   },
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   bebidaPreco: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: 'bold',
     color: '#FFA500',
     textAlign: 'center',

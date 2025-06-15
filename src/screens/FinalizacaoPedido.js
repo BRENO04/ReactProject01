@@ -98,7 +98,7 @@ export default function FinalizacaoPedido({ navigation }) {
 
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.goBack()} disabled={isConfirming}>
-                <ArrowLeft size={30} color="white" weight="bold" />
+                <ArrowLeft size={30} color="#000000" weight="bold" />
                 </TouchableOpacity>
                 <Text style={styles.title}>Finalizar Pedido</Text>
                 <View style={{ width: 30 }} />
@@ -162,7 +162,7 @@ export default function FinalizacaoPedido({ navigation }) {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#FFFFFF',
   },
 
   scrollView: {
@@ -176,11 +176,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#333',
+    borderBottomColor: 'transparent',
   },
 
   title: {
-      color: 'white',
+      color: '#000000',
       fontSize: 18,
       fontWeight: 'bold',
   },
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
       fontSize: 18,
       fontWeight: 'bold',
-      color: 'white',
+      color: '#000000',
       marginTop: 25,
       marginBottom: 15,
       marginLeft: 20,
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
 
   listContainer: {
       marginHorizontal: 20,
-      backgroundColor: '#1C1C1C',
+      backgroundColor: '#F5F5F5',
       borderRadius: 10,
       padding: 10,
   },
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#444', 
+    borderBottomColor: 'transparent', 
   },
 
   lastItemContainer: {
@@ -214,8 +214,8 @@ const styles = StyleSheet.create({
   },
 
   itemImage: {
-    width: 45,
-    height: 45,
+    width: 55,
+    height: 55,
     borderRadius: 8,
     marginRight: 10,
   },
@@ -224,11 +224,11 @@ const styles = StyleSheet.create({
   },
   itemName: {
     fontSize: 15,
-    color: 'white',
+    color: '#000000',
     marginBottom: 3,
   },
   itemPrice: {
-    fontSize: 14,
+    fontSize: 15,
     color: '#FFA500',
     fontWeight: 'bold',
   },
@@ -242,15 +242,15 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 15,
-    color: '#CCC',
+    color: '#000000',
     marginBottom: 8,
   },
   input: {
-    backgroundColor: '#333',
+    backgroundColor: '#F5F5F5',
     borderRadius: 8,
     paddingVertical: 12,
     paddingHorizontal: 15,
-    color: 'white',
+    color: '#000000',
     fontSize: 16,
     marginBottom: 5, 
   },
@@ -268,12 +268,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 20,
     borderTopWidth: 1,
-    borderTopColor: '#333',
+    borderTopColor: 'transparent',
     paddingBottom: 30, 
   },
   totalText: {
     fontSize: 20,
-    color: 'white',
+    color: '#000000',
     fontWeight: 'bold',
     marginBottom: 20,
   },
@@ -288,10 +288,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   confirmarButtonDisabled: {
-      backgroundColor: '#888',
+      backgroundColor: '#4A90E2',
   },
   confirmarText: {
-    color: 'black',
+    color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'bold',
   },

@@ -1,25 +1,23 @@
 import React, { useMemo } from 'react'; 
-import { View, Text, Image, StyleSheet, TouchableOpacity, FlatList, SafeAreaView } from 'react-native'; 
-import { ArrowLeft } from 'phosphor-react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, FlatList, SafeAreaView, Alert } from 'react-native'; 
+import { ArrowLeft, Trash } from 'phosphor-react-native';
 import { useCart } from '../../context/CartContext'; 
 
 export default function Sacola({ navigation }) {
-  
   const { itensSacola, removeFromCart, calcularTotal, clearCart } = useCart(); 
 
   const totalCalculado = useMemo(() => calcularTotal(), [itensSacola, calcularTotal]);
 
   const handleFinalizarPedido = () => {
-
     navigation.navigate('FinalizacaoPedido'); 
   };
 
   const renderHeader = () => (
     <View style={styles.header}>
       <TouchableOpacity onPress={() => navigation.goBack()}>
-        <ArrowLeft size={30} color="white" weight="bold" />
+        <ArrowLeft size={30} color="#000000" weight="bold" />
       </TouchableOpacity>
-   
+      <Text style={styles.headerTitle}>Sacola</Text>
       <View style={{ width: 30 }} />
     </View>
   );
@@ -49,8 +47,11 @@ export default function Sacola({ navigation }) {
         <Text style={styles.itemPrice}>R$ {(Number(item.preco || 0) * Number(item.quantidade || 0)).toFixed(2)}</Text>
         <Text style={styles.itemQuantity}>Quantidade: {item.quantidade}</Text>
       </View>
-      <TouchableOpacity onPress={() => removeFromCart(item.id)} style={styles.removeButton}>
-        <Text style={styles.removeText}>X</Text>
+      <TouchableOpacity onPress={() => Alert.alert('Confirmação', `Remover ${item.nome} da sacola?`, [
+        { text: 'Cancelar', style: 'cancel' },
+        { text: 'Remover', onPress: () => removeFromCart(item.id), style: 'destructive' },
+      ])} style={styles.removeButton}>
+        <Trash size={20} color="#D32F2F" weight="fill" />
       </TouchableOpacity>
     </View>
   );
@@ -75,7 +76,7 @@ export default function Sacola({ navigation }) {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#FFFFFF',
   },
   listStyle: {
     flex: 1, 
@@ -89,82 +90,91 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 10,
-    
+    paddingVertical: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#E0E0E0',
+  },
+  headerTitle: {
+    fontSize: 20,
+    color: '#333333',
+    fontWeight: 'bold',
   },
   itemContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 15, 
-    borderBottomWidth: 1,
-    borderBottomColor: '#333',
+    paddingVertical: 15,
+    backgroundColor: '#F5F5F5',
+    borderRadius: 10,
+    marginBottom: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
   },
   itemImage: {
-    width: 60, 
-    height: 60,
+    width: 80,
+    height: 80,
     borderRadius: 10,
-    marginRight: 15, 
+    marginRight: 15,
   },
   itemDetails: {
     flex: 1,
-    
   },
   itemName: {
     fontSize: 16,
-    color: 'white',
+    color: '#333333',
+    fontWeight: 'bold',
     marginBottom: 5,
   },
   itemPrice: {
     fontSize: 16,
     color: '#FFA500',
     fontWeight: 'bold',
-    marginBottom: 5, 
+    marginBottom: 5,
   },
   itemQuantity: {
     fontSize: 14,
-    color: '#CCC',
+    color: '#757575',
   },
   removeButton: {
-    padding: 10, 
-    marginLeft: 10, 
-  },
-  removeText: {
-    fontSize: 20, 
-    color: 'red',
-    fontWeight: 'bold',
+    padding: 8,
   },
   emptyText: {
-    flex: 1, 
+    flex: 1,
     fontSize: 18,
-    color: 'white',
+    color: '#757575',
     textAlign: 'center',
-    marginTop: 50, 
+    marginTop: 50,
     paddingHorizontal: 20,
   },
   totalContainer: {
-    paddingTop: 30, 
-    paddingBottom: 20, 
+    paddingTop: 20,
+    paddingBottom: 30,
     alignItems: 'center',
-    borderTopWidth: 1, 
-    borderTopColor: '#333',
-    marginTop: 10, 
+    borderTopWidth: 1,
+    borderTopColor: '#E0E0E0',
   },
   totalText: {
     fontSize: 20,
-    color: 'white',
+    color: '#000000',
     fontWeight: 'bold',
     marginBottom: 20,
   },
   finalizarButton: {
     backgroundColor: '#FFA500',
     paddingVertical: 12,
-    paddingHorizontal: 50, 
+    paddingHorizontal: 50,
     borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
   },
   finalizarText: {
-    color: 'black',
+    color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'bold',
   },
 });
-

@@ -6,10 +6,10 @@ import { useCart } from '../../context/CartContext';
 const { width, height } = Dimensions.get('window');
 const sugestoesExemplo = [
   
-  { id: 's1', nome: 'Biscoito PassaTempo', imagem: require('../../assets/snacks9.jpg'), preco: 2.99 },
-  { id: 's2', nome: 'Rufles', imagem: require('../../assets/snacks2.jpg'), preco: 9.99 },
-  { id: 's3', nome: 'Skol Lata 350ml', imagem: require('../../assets/skollata.jpg'), preco: 2.99 },
-  { id: 's4', nome: 'Cheetos Requeijão', imagem: require('../../assets/snacks5.jpg'), preco: 9.99 },
+  { id: 's1', nome: 'Biscoito PassaTempo 90g', imagem: require('../../assets/snacks9.jpg'), preco: 2.99 },
+  { id: 's2', nome: 'Rufles 68g', imagem: require('../../assets/snacks2.jpg'), preco: 9.99 },
+  { id: 's3', nome: 'Cerveja Skol Lata 350ml', imagem: require('../../assets/skollata.jpg'), preco: 2.99 },
+  { id: 's4', nome: 'Cheetos Requeijão 160g', imagem: require('../../assets/snacks5.jpg'), preco: 9.99 },
 ];
 
 export default function Detalhes({ route, navigation }) {
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   addButtonText: {
-    color: '#000000',
+    color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'bold',
   },

@@ -31,7 +31,7 @@ const bebidas = [
   { id: '3', nome: 'Cerveja Skol Lata', descricao: '350ML', imagem: require('../../assets/skollata.jpg'), preco: 2.99, categoria: 'cervejas' },
   { id: '4', nome: 'Cerveja Skol garrafa', descricao: '350ML', imagem: require('../../assets/skolgarrafa.jpg'), preco: 3.99, categoria: 'cervejas' },
   { id: '5', nome: 'Energético Red Bull', descricao: '250ML', imagem: require('../../assets/redbull2.jpg'), preco: 7.99, categoria: 'nao_alcoolicos' },
-  { id: '6', nome: 'Energético Monster', descricao: '250ML', imagem: require('../../assets/Monster2.jpg'), preco: 7.49, categoria: 'nao_alcoolicos' },
+  { id: '6', nome: 'Energético Monster', descricao: '250ML', imagem: require('../../assets/Monster2.jpg'), preco: 7.99, categoria: 'nao_alcoolicos' },
   { id: '7', nome: 'Cerveja Budweiser Garrafa', descricao: '350ML', imagem: require('../../assets/budweiser2.jpg'), preco: 6.99, categoria: 'cervejas' },
   { id: '8', nome: 'Cerveja Imperio Lata', descricao: '300ML', imagem: require('../../assets/imperio2.jpg'), preco: 3.49, categoria: 'cervejas' },
   { id: '9', nome: 'Cerveja Glacial Lata', descricao: '250ML', imagem: require('../../assets/glacial2.jpg'), preco: 2.49, categoria: 'cervejas' },
@@ -41,7 +41,7 @@ const bebidas = [
   { id: '13', nome: 'Doritos', descricao: '120g', imagem: require('../../assets/snacks1.jpg'), preco: 12.99, categoria: 'snacks' },
   { id: '14', nome: 'Rufles', descricao: '68g', imagem: require('../../assets/snacks2.jpg'), preco: 9.99, categoria: 'snacks' },
   { id: '15', nome: 'Torcida', descricao: '35g', imagem: require('../../assets/snacks3.jpg'), preco: 1.99, categoria: 'snacks' },
-  { id: '16', nome: 'Cheetos Parmesão', descricao: '160', imagem: require('../../assets/snacks4.jpg'), preco: 9.99, categoria: 'snacks' },
+  { id: '16', nome: 'Cheetos Parmesão', descricao: '160g', imagem: require('../../assets/snacks4.jpg'), preco: 9.99, categoria: 'snacks' },
   { id: '17', nome: 'Cheetos requeijão', descricao: '160g', imagem: require('../../assets/snacks5.jpg'), preco: 9.99, categoria: 'snacks' },
   { id: '18', nome: 'Chocolate KitKat', descricao: '45g', imagem: require('../../assets/snacks6.jpeg'), preco: 2.99, categoria: 'snacks' },
   { id: '19', nome: 'Chocolate Bis', descricao: '126g', imagem: require('../../assets/snacks7.jpg'), preco: 7.99, categoria: 'snacks' },
@@ -100,7 +100,7 @@ const CategoriasList = ({ navigation }) => (
 
 const Header = ({ searchQuery, setSearchQuery, searchInputRef }) => (
   <View style={styles.header}>
-    <Image source={require('../../assets/marcaoLogo1.png')} style={styles.logo} />
+    <Image source={require('../../assets/logoM01.png')} style={styles.logo} />
     <View style={styles.searchContainer}>
       <TextInput
         ref={searchInputRef}
